@@ -5,10 +5,30 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
+        <style>
+            @import url("https://fonts.googleapis.com/css?family=Fira+Mono:400");
+
+            body {
+                display: flex;
+                width: 100vw;
+                height: 100vh;
+                align-items: start;
+                justify-content: left;
+                margin: 0;
+                background: #131313;
+                color: #fff;
+                font-family: "Fira Mono", monospace;
+            }
+            div {
+                padding: 10px;
+            }
+        </style>
     </head>
     <body>
-        Text: <input type="text" id="myText" value="Valor" />
-        <button onclick="myFunction()">Cambiar</button>
+        <div>
+            Text: <input type="text" id="myText" value="Valor" />
+            <button onclick="myFunction()">Cambiar</button>
+        </div>
     </body>
     <script>
         function myFunction() {
