@@ -89,13 +89,20 @@
         <title>Document</title>
     </head>
     <body>
-        <div id="text" title="404">404</div>
-        <button onclick="myFunction()">Try it</button>
+        <div id="text" title="Text">Text</div>
     </body>
     <script>
-        function myFunction() {
-            document.getElementById("text").title = "hackanm.gif";
-            document.getElementById("text").innerHTML = "hackanm.gif";
+        async function request() {
+            let response = await fetch(
+                "https://gente-mala.firebaseio.com/datastream.json"
+            );
+            let result = await response.json();
+            console.log(result.text);
+            document.getElementById("text").title = result.text;
+            document.getElementById("text").innerHTML = result.text;
         }
+
+        request();
+        setInterval("request()", 1000);
     </script>
 </html>
